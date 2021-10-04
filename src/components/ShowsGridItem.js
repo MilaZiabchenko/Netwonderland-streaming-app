@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const ShowsGridItem = ({ item }) => {
 	const [heartIcon, setIcon] = useState('fas fa-heart fa-2x');
+	const history = useHistory();
 
 	const handleLikes = () => {
 		setIcon('far fa-heart fa-2x');
 	};
+
+	const handleFavorites = () => {
+		history.push('/favorites');
+	}
 
 	return (
 		<div className="card">
@@ -34,7 +40,7 @@ const ShowsGridItem = ({ item }) => {
 							<i className="fas fa-share fa-2x btn-icon"></i>
 						</li>
 						<li>
-							<button className="btn btn-center">
+							<button className="btn btn-center" onClick={handleFavorites}>
 								Add to favorites
 							</button>
 						</li>
