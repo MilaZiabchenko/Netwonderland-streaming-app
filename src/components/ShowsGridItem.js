@@ -11,8 +11,7 @@ const ShowsGridItem = ({ item }) => {
 
 	const handleFavorites = () => {
 		history.push('/favorites');
-	}
-
+	};
 	return (
 		<div className="card">
 			<div className="card-inner">
@@ -40,7 +39,10 @@ const ShowsGridItem = ({ item }) => {
 							<i className="fas fa-share fa-2x btn-icon"></i>
 						</li>
 						<li>
-							<button className="btn btn-center" onClick={handleFavorites}>
+							<button
+								className="btn btn-center"
+								onClick={handleFavorites}
+							>
 								Add to favorites
 							</button>
 						</li>
