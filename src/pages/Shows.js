@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import useFetch from '../components/useFetch';
+import useFetch from '../hooks/useFetch';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import ShowsGrid from '../components/ShowsGrid';
@@ -11,12 +11,14 @@ const Shows = () => {
 		'https://api.tvmaze.com/shows'
 	);
 
-	const [searchedItem, setItem] = useState('')
+	const [searchedItem, setItem] = useState(items);
 	const [query, setQuery] = useState(searchedItem);
 
 	useEffect(() => {
 		const fetchItems = async () => {
-			const result = await axios.get(`https://api.tvmaze.com/search/shows?q=${query}`);
+			const result = await axios(
+				`https://api.tvmaze.com/search/shows?q=${query}`
+			);
 
 			setItem(result.data);
 		};
