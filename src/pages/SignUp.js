@@ -1,6 +1,18 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+// import { useAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
+	const emailRef = useRef();
+	const passwordRef = useRef();
+	const passwordConfirmRef = useRef();
+	// const {signup} = useAuth();
+
+	// const handleSubmit = e => {
+	// 	e.preventDefault();
+	// 	signup(emailRef.current.value, passwordRef.current.value);
+	// }
+
 	return (
 		<>
 			<header className="showcase-top">
@@ -22,19 +34,25 @@ const SignUp = () => {
 						</h2>
 						<form>
 							<input
+								id="email"
 								type="email"
+								ref={emailRef}
 								className="form-control"
 								placeholder="Email"
 								required
 							/>
 							<input
+								id="password"
 								type="password"
+								ref={passwordRef}
 								className="form-control"
 								placeholder="Password"
 								required
 							/>
 							<input
+								id="password-confirm"
 								type="password"
+								ref={passwordConfirmRef}
 								className="form-control"
 								placeholder="Password confirmation"
 								required
