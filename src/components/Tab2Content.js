@@ -6,8 +6,8 @@ const Tab2Content = ({ className }) => {
 			<div className="tab-2-content-inner">
 				<div>
 					<p className="text-lg">
-						If you decide <span> NeTWondeRLanD</span> isn't for you
-						- no problem. No commitment. Cancel online anytime.
+						If you decide <span> NeTWondeRLanD</span> isn't for you - no
+						problem. No commitment. Cancel online anytime.
 					</p>
 				</div>
 				<div className="cancel-image">

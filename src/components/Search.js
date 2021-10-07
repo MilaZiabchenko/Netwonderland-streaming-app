@@ -4,7 +4,9 @@ const Search = ({ getQuery }) => {
 	const [text, setText] = useState('');
 
 	const handleSearch = q => {
+		// console.log('query', q);
 		setText(q);
+		// console.log(text);
 		getQuery(q);
 	};
 

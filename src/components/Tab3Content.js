@@ -3,8 +3,7 @@ const Tab3Content = ({ className }) => {
 		<div id="tab-3-content" className={className}>
 			<div>
 				<p className="text-lg">
-					Choose one plan and watch everything on{' '}
-					<span> NeTWondeRLanD</span>
+					Choose one plan and watch everything on <span> NeTWondeRLanD</span>
 				</p>
 			</div>
 

@@ -25,8 +25,7 @@ const ShowsGridItem = ({ item }) => {
 							<strong>Language:</strong> {item.language}
 						</li>
 						<li>
-							<strong>Genres:</strong>{' '}
-							{item.genres.map(genre => `${genre} `)}
+							<strong>Genres:</strong> {item.genres.map(genre => `${genre} `)}
 						</li>
 						<li>
 							<strong>Premiered:</strong> {item.premiered}
@@ -39,10 +38,7 @@ const ShowsGridItem = ({ item }) => {
 							<i className="fas fa-share fa-2x btn-icon"></i>
 						</li>
 						<li>
-							<button
-								className="btn btn-center"
-								onClick={handleFavorites}
-							>
+							<button className="btn btn-center" onClick={handleFavorites}>
 								Add to favorites
 							</button>
 						</li>

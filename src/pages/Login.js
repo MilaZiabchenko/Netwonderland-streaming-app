@@ -1,6 +1,13 @@
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+	// const [value, setValue] = useState('');
+
+	// const clearField = () => {
+	// 	setValue('');
+	// };
+
 	return (
 		<>
 			<header className="showcase-top">
@@ -20,12 +27,20 @@ const Login = () => {
 								type="email"
 								className="form-control"
 								placeholder="Email"
+								autoComplete="off"
+								value=""
+								// onChange={e => clearField(e.target.value)}
+								readOnly
 								required
 							/>
 							<input
 								type="password"
 								className="form-control"
 								placeholder="Password"
+								autoComplete="off"
+								value=""
+								// onChange={e => clearField(e.target.value)}
+								readOnly
 								required
 							/>
 							<button type="submit" className="btn btn-submit">
@@ -36,10 +51,7 @@ const Login = () => {
 							New to NeTWondeRLanD?{' '}
 							<Link to="/signup">
 								{' '}
-								<strong className="text-black">
-									{' '}
-									Sign up now.
-								</strong>
+								<strong className="text-black"> Sign up now.</strong>
 							</Link>{' '}
 						</p>
 					</section>

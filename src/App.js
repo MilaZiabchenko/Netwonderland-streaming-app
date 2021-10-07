@@ -5,37 +5,37 @@ import ShowsItemDetails from './components/ShowsItemDetails';
 import Favorites from './pages/Favorites';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-// import { AuthProvider } from './contexts/AuthContext';
+import Footer from './components/Footer';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
 	return (
 		<>
-			{/* <AuthProvider> */}
+			<AuthProvider>
 				<Router>
-					<div className="content">
-						<Switch>
-							<Route exact path="/">
-								<Home />
-							</Route>
-							<Route path="/shows">
-								<Shows />
-							</Route>
-							<Route path="/shows/:id">
-								<ShowsItemDetails />
-							</Route>
-							<Route path="/favorites">
-								<Favorites />
-							</Route>
-							<Route path="/login">
-								<Login />
-							</Route>
-							<Route path="/signup">
-								<SignUp />
-							</Route>
-						</Switch>
-					</div>
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route path="/shows">
+							<Shows />
+						</Route>
+						<Route path="/shows/:id">
+							<ShowsItemDetails />
+						</Route>
+						<Route path="/favorites">
+							<Favorites />
+						</Route>
+						<Route path="/login">
+							<Login />
+						</Route>
+						<Route path="/signup">
+							<SignUp />
+						</Route>
+					</Switch>
+					<Footer />
 				</Router>
-			{/* </AuthProvider> */}
+			</AuthProvider>
 		</>
 	);
 }

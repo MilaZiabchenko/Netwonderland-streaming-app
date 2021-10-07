@@ -296,28 +296,6 @@ img {
 	background: hsl(0, 0%, 16%);
 }
 
-.footer {
-	max-width: 900px;
-	margin: 3rem auto 2rem;
-	padding-top: 2rem;
-}
-
-.footer,
-.footer a {
-	font-size: 0.9rem;
-}
-
-.footer li {
-	line-height: 1.9;
-}
-
-.footer .footer-cols {
-	display: grid;
-	justify-items: center;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 2rem;
-}
-
 .search,
 .sign-up,
 .sign-in {
@@ -332,8 +310,8 @@ input {
 	padding: 10px 15px;
 	border-radius: 5px;
 	border: 1px solid hsla(0, 0%, 100%, 0.88);
-	font-size: 20px;
 	box-shadow: 0 5px 18px 0 hsla(0, 0%, 0%, 0.18);
+	font-size: 20px;
 }
 
 input[type='text'] {
@@ -565,10 +543,6 @@ input[type='text'] {
 
 	.cancel-image {
 		margin-top: 0;
-	}
-
-	.footer-cols ul {
-		justify-self: start;
 	}
 
 	.btn-xl {

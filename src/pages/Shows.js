@@ -4,12 +4,9 @@ import useFetch from '../hooks/useFetch';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import ShowsGrid from '../components/ShowsGrid';
-import Footer from '../components/Footer';
 
 const Shows = () => {
-	const { items, isLoading, error } = useFetch(
-		'https://api.tvmaze.com/shows'
-	);
+	const { items, isLoading, error } = useFetch('https://api.tvmaze.com/shows');
 
 	const [searchedItem, setItem] = useState(items);
 	const [query, setQuery] = useState(searchedItem);
@@ -24,6 +21,7 @@ const Shows = () => {
 		};
 
 		fetchItems();
+		// console.log(query);
 	}, [query]);
 
 	return (
@@ -35,8 +33,8 @@ const Shows = () => {
 				<h3>{error.message}</h3>
 			) : (
 				<ShowsGrid isLoading={isLoading} items={items} />
+				// <ShowsGrid isLoading={isLoading} items={searchedItem} />
 			)}
-			<Footer />
 		</>
 	);
 };

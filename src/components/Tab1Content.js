@@ -23,25 +23,25 @@ const Tab1Content = ({ className }) => {
 			<div className="tab-1-content-bottom">
 				<Tab1ContentItem
 					source={Beth_1}
-					text1="Watch on your TV"
-					text2="Streaming Media Players, Smart TVs, Game
+					title="Watch on your TV"
+					text="Streaming Media Players, Smart TVs, Game
 								Consoles and more."
 				/>
 				<Tab1ContentItem
 					source={Beth_2}
-					text1="Stream on your Blu-ray player"
-					text2="Enjoy sights and sounds, using Blu-ray player or
+					title="Stream on your Blu-ray player"
+					text="Enjoy sights and sounds, using Blu-ray player or
 								Home Theater System."
 				/>
 				<Tab1ContentItem
 					source={Beth_3}
-					text1="Watch instantly or download for later"
-					text2="Available on phone and tablet, wherever you go."
+					title="Watch instantly or download for later"
+					text="Available on phone and tablet, wherever you go."
 				/>
 				<Tab1ContentItem
 					source={Beth_4}
-					text1="Use any computer"
-					text2={highlightedText}
+					title="Use any computer"
+					text={highlightedText}
 				/>
 			</div>
 		</div>

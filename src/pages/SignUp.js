@@ -1,17 +1,17 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-// import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
-	// const {signup} = useAuth();
+	const { signup } = useAuth();
 
-	// const handleSubmit = e => {
-	// 	e.preventDefault();
-	// 	signup(emailRef.current.value, passwordRef.current.value);
-	// }
+	const handleSubmit = e => {
+		e.preventDefault();
+		signup(emailRef.current.value, passwordRef.current.value);
+	};
 
 	return (
 		<>
@@ -32,13 +32,14 @@ const SignUp = () => {
 							{' '}
 							<span>Sign Up</span>
 						</h2>
-						<form>
+						<form onSubmit={handleSubmit}>
 							<input
 								id="email"
 								type="email"
 								ref={emailRef}
 								className="form-control"
 								placeholder="Email"
+								autoComplete="off"
 								required
 							/>
 							<input
@@ -47,6 +48,7 @@ const SignUp = () => {
 								ref={passwordRef}
 								className="form-control"
 								placeholder="Password"
+								autoComplete="off"
 								required
 							/>
 							<input
@@ -55,6 +57,7 @@ const SignUp = () => {
 								ref={passwordConfirmRef}
 								className="form-control"
 								placeholder="Password confirmation"
+								autoComplete="off"
 								required
 							/>
 							<button type="submit" className="btn btn-submit">
@@ -65,10 +68,7 @@ const SignUp = () => {
 							Already have an account?{' '}
 							<Link to="/login">
 								{' '}
-								<strong className="text-black">
-									{' '}
-									Sign in.
-								</strong>
+								<strong className="text-black"> Sign in.</strong>
 							</Link>{' '}
 						</p>
 					</section>
