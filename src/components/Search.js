@@ -1,26 +1,29 @@
 import { useRef, useState } from 'react';
 
-const Search = ({ newValue }) => {
-	const [text, setText] = useState('');
+const Search = ({ newValue, data }) => {
+	const [inputText, setInputText] = useState('');
 	const inputRef = useRef();
 
 	const handleSubmit = e => {
 		e.preventDefault();
-
 		const enteredText = inputRef.current.value;
-
 		console.log(enteredText);
 
 		return enteredText;
 	};
 
-	const handleSearch = q => {
-		console.log(q);
+	const handleSearch = e => {
+		const enteredText = e.target.value;
+		setInputText(enteredText);
 
-		newValue = setText(q);
+		console.log(enteredText);
 
-		console.log(q);
-		
+		newValue = data.filter(value =>
+			value.title.toLowerCase().includes(enteredText.toLowerCase())
+		);
+
+		console.log(newValue);
+
 		return newValue;
 	};
 
@@ -31,9 +34,9 @@ const Search = ({ newValue }) => {
 					type="text"
 					className="form-control"
 					placeholder="Search..."
-					value={text}
 					ref={inputRef}
-					onChange={e => handleSearch(e.target.value)}
+					value={inputText}
+					onChange={handleSearch}
 					autoFocus
 				/>
 			</form>

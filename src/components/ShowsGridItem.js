@@ -12,6 +12,7 @@ const ShowsGridItem = ({ item }) => {
 	const handleFavorites = () => {
 		history.push('/favorites');
 	};
+	
 	return (
 		<div className="card">
 			<div className="card-inner">
