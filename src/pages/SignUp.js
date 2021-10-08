@@ -1,16 +1,16 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+// import { useAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
-	const { signup } = useAuth();
+	// const { signup } = useAuth();
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		signup(emailRef.current.value, passwordRef.current.value);
+		// signup(emailRef.current.value, passwordRef.current.value);
 	};
 
 	return (

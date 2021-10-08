@@ -1,12 +1,6 @@
-// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-	// const [value, setValue] = useState('');
-
-	// const clearField = () => {
-	// 	setValue('');
-	// };
 
 	return (
 		<>
@@ -28,8 +22,7 @@ const Login = () => {
 								className="form-control"
 								placeholder="Email"
 								autoComplete="off"
-								value=""
-								// onChange={e => clearField(e.target.value)}
+								value=''
 								readOnly
 								required
 							/>
@@ -38,8 +31,7 @@ const Login = () => {
 								className="form-control"
 								placeholder="Password"
 								autoComplete="off"
-								value=""
-								// onChange={e => clearField(e.target.value)}
+								value=''
 								readOnly
 								required
 							/>

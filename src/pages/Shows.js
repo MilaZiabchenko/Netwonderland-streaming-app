@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { useEffect } from 'react';
 import useFetch from '../hooks/useFetch';
 import Header from '../components/Header';
 import Search from '../components/Search';
@@ -8,32 +8,44 @@ import ShowsGrid from '../components/ShowsGrid';
 const Shows = () => {
 	const { items, isLoading, error } = useFetch('https://api.tvmaze.com/shows');
 
-	const [searchedItem, setItem] = useState(items);
-	const [query, setQuery] = useState(searchedItem);
+	console.log(items);
 
-	useEffect(() => {
-		const fetchItems = async () => {
-			const result = await axios(
-				`https://api.tvmaze.com/search/shows?q=${query}`
-			);
+	const movies = [];
+	items.map(item => movies.push({ id: item.id, title: item.name }));
 
-			setItem(result.data);
-		};
+	console.log(movies);
 
-		fetchItems();
-		// console.log(query);
-	}, [query]);
+	const titles = movies.map(movie => movie.title);
+
+	console.log(titles);
+
+	// const [searchedItem, setItem] = useState(items.name);
+	// const [query, setQuery] = useState('');
+
+	// useEffect(() => {
+	// 	const fetchItem = async () => {
+	// 		const result = await axios(
+	// 			`https://api.tvmaze.com/search/shows?q=${items}`
+	// 		);
+
+	// 		// setItem(result.data[1]);
+	// 		console.log(result.data);
+	// 		// setQuery(result.data);
+	// 		// console.log(result.data);
+	// 	};
+
+	// 	fetchItem();
+	// }, [items]);
 
 	return (
 		<>
 			<Header />
 			<h2 className="text-lg">Shows</h2>
-			<Search getQuery={q => setQuery(q)} />
+			<Search newValue={movies.map(movie => movie.title)} />
 			{error ? (
 				<h3>{error.message}</h3>
 			) : (
 				<ShowsGrid isLoading={isLoading} items={items} />
-				// <ShowsGrid isLoading={isLoading} items={searchedItem} />
 			)}
 		</>
 	);
