@@ -22,6 +22,7 @@ const useFetch = url => {
 				setItems(result.data);
 				setIsLoading(false);
 				setError(null);
+
 			} catch (error) {
 				if (error.name === 'AbortError') {
 					console.log('fetch aborted');

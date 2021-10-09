@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const ShowsGridItem = ({ item }) => {
+const ShowsGridItem = ({ show }) => {
 	const [heartIcon, setIcon] = useState('fas fa-heart fa-2x');
 	const history = useHistory();
 
@@ -12,27 +12,27 @@ const ShowsGridItem = ({ item }) => {
 	const handleFavorites = () => {
 		history.push('/favorites');
 	};
-	
+
 	return (
 		<div className="card">
 			<div className="card-inner">
 				<div className="card-front">
-					<img src={item.image.original} alt="" />
+					<img src={show.image.original} alt="" />
 				</div>
 				<div className="card-back">
-					<h1>{item.name}</h1>
+					<h1>{show.name}</h1>
 					<ul>
 						<li>
-							<strong>Language:</strong> {item.language}
+							<strong>Language:</strong> {show.language}
 						</li>
 						<li>
-							<strong>Genres:</strong> {item.genres.map(genre => `${genre} `)}
+							<strong>Genres:</strong> {show.genres.map(genre => `${genre} `)}
 						</li>
 						<li>
-							<strong>Premiered:</strong> {item.premiered}
+							<strong>Premiered:</strong> {show.premiered}
 						</li>
 						<li>
-							<strong>Rating:</strong> {item.rating.average}
+							<strong>Rating:</strong> {show.rating.average}
 						</li>
 						<li>
 							<i className={heartIcon} onClick={handleLikes}></i>

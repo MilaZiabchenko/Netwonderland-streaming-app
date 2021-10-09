@@ -3,13 +3,13 @@ import useFetch from '../hooks/useFetch';
 
 const ShowsItemDetails = () => {
 	const { id } = useParams();
-	const { items: item } = useFetch('https://api.tvmaze.com/shows/' + id);
+	const { items: show } = useFetch('https://api.tvmaze.com/shows/' + id);
 
 	return (
 		<div className="card-details">
 			<article>
-				<h2>{item.name}</h2>
-				<p>{item.summary}</p>
+				<h2>{show.name}</h2>
+				<p>{show.summary}</p>
 			</article>
 		</div>
 	);
