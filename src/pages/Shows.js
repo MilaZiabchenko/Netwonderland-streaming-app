@@ -15,18 +15,22 @@ const Shows = () => {
 	const [inputText, setInputText] = useState('');
 	const inputRef = useRef();
 
-	const handleSubmit = e => {
-		e.preventDefault();
-		setInputText(inputRef.current.value);
-		// setInputText('');
-	};
-
 	const filteredShows = shows.filter(show =>
 		show.name.toLowerCase().includes(inputText.toLowerCase())
 	);
 
+	const handleSubmit = e => {
+		e.preventDefault();
+
+		const enteredText = inputRef.current.value;
+
+		console.log(enteredText);
+	};
+
 	const handleSearch = e => {
 		setInputText(e.target.value);
+
+		console.log(e.target.value);
 	};
 
 	const clearInput = () => {
