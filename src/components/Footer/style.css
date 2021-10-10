@@ -25,3 +25,10 @@
 		justify-self: start;
 	}
 }
+
+@media (max-width: 500px) {
+	.footer .footer-cols {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0;
+	}
+}

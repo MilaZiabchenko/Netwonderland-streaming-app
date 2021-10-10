@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
+import useDebouncedValue from '../hooks/useDebouncedValue';
 import Header from '../components/Header';
 import ShowsGrid from '../components/ShowsGrid';
 
@@ -10,61 +11,40 @@ const Shows = () => {
 		error
 	} = useFetch('https://api.tvmaze.com/shows');
 
-	console.log(shows);
-
 	const [inputText, setInputText] = useState('');
-	const inputRef = useRef();
+	const debouncedText = useDebouncedValue(inputText, 300);
 
 	const filteredShows = shows.filter(show =>
-		show.name.toLowerCase().includes(inputText.toLowerCase())
+		show.name.toLowerCase().startsWith(debouncedText.toLowerCase())
 	);
 
-	const handleSubmit = e => {
-		e.preventDefault();
-
-		const enteredText = inputRef.current.value;
-
-		console.log(enteredText);
-	};
-
-	const handleSearch = e => {
-		setInputText(e.target.value);
-
-		console.log(e.target.value);
-	};
-
-	const clearInput = () => {
-		setInputText('');
-	};
+	const changeHandler = e => setInputText(e.target.value);
 
 	return (
 		<>
 			<Header />
 			<h2 className="text-lg">Shows</h2>
 			<section className="search">
-				<form onSubmit={handleSubmit}>
-					<div className="searchInputs">
-						<input
-							type="text"
-							className="form-control"
-							placeholder="Search..."
-							ref={inputRef}
-							value={inputText}
-							onChange={handleSearch}
-							autoFocus
-						/>
-						<div className="searchIcon">
-							{inputText === '' ? (
-								<i className="fas fa-search fa-2x"></i>
-							) : (
-								<i
-									className="fas fa-times fa-2x clear-btn"
-									onClick={clearInput}
-								></i>
-							)}
-						</div>
+				<div className="searchInputs">
+					<input
+						type="text"
+						className="form-control"
+						placeholder="Search..."
+						value={inputText}
+						onChange={changeHandler}
+						autoFocus
+					/>
+					<div className="searchIcon">
+						{inputText === '' ? (
+							<i className="fas fa-search fa-2x"></i>
+						) : (
+							<i
+								className="fas fa-times fa-2x clear-btn"
+								onClick={() => setInputText('')}
+							></i>
+						)}
 					</div>
-				</form>
+				</div>
 			</section>
 			{error ? (
 				<h3 className="text-lg">
