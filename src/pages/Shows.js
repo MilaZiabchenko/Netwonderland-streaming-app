@@ -18,7 +18,13 @@ const Shows = () => {
 		show.name.toLowerCase().startsWith(debouncedText.toLowerCase())
 	);
 
-	const changeHandler = e => setInputText(e.target.value);
+	const changeHandler = e => {
+		setInputText(e.target.value);
+	};
+
+	const clearInput = () => {
+		setInputText('');
+	};
 
 	return (
 		<>
@@ -40,7 +46,7 @@ const Shows = () => {
 						) : (
 							<i
 								className="fas fa-times fa-2x clear-btn"
-								onClick={() => setInputText('')}
+								onClick={clearInput}
 							></i>
 						)}
 					</div>
