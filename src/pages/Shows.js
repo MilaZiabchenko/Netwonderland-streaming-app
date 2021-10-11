@@ -60,6 +60,12 @@ const Shows = () => {
 			) : (
 				<ShowsGrid isLoading={isLoading} shows={filteredShows} />
 			)}
+			{filteredShows.length === 0 && inputText !== '' && (
+				<h3 className="text-lg">
+					{' '}
+					<span>No matches :( </span>
+				</h3>
+			)}
 		</>
 	);
 };
