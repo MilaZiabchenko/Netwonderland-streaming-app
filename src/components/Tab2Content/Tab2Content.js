@@ -1,7 +1,6 @@
 import cancel_image from '../../images/cancel_image.jpg';
 import './style.css';
 
-
 const Tab2Content = ({ className }) => {
 	return (
 		<div id="tab-2-content" className={className}>

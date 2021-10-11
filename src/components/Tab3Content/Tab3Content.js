@@ -1,3 +1,5 @@
+import './style.css';
+
 const Tab3Content = ({ className }) => {
 	return (
 		<div id="tab-3-content" className={className}>

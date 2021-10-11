@@ -1,0 +1,52 @@
+.card {
+  justify-self: center;
+  cursor: pointer;
+  height: 360px;
+  width: 280px;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.card h1 {
+  font-size: 25px;
+  border-bottom: 1px var(--light-color) solid;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.card img {
+  height: 100%;
+  filter: grayscale(95%) brightness(95%);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 800ms;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 12px;
+}

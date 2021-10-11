@@ -1,6 +1,7 @@
-import spinner from '../images/spinner.gif';
+import spinner from '../../images/spinner.gif';
 import { Link } from 'react-router-dom';
-import ShowsGridItem from './ShowsGridItem';
+import ShowsGridItem from '../ShowsGridItem';
+import './style.css';
 
 const ShowsGrid = ({ shows, isLoading }) => {
 	return isLoading ? (

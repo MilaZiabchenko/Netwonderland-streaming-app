@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import './style.css';
 
 const ShowsGridItem = ({ show }) => {
 	const [heartIcon, setIcon] = useState('fas fa-heart fa-2x');
