@@ -2,17 +2,17 @@ import { useParams } from 'react-router';
 import useFetch from '../hooks/useFetch';
 
 const ShowsItemDetails = () => {
-	const { id } = useParams();
-	const { items: show } = useFetch('https://api.tvmaze.com/shows/' + id);
+  const { id } = useParams();
+  const { items: show } = useFetch('https://api.tvmaze.com/shows/' + id);
 
-	return (
-		<div className="card-details">
-			<article>
-				<h2>{show.name}</h2>
-				<p>{show.summary}</p>
-			</article>
-		</div>
-	);
+  return (
+    <div className="card-details">
+      <article>
+        <h2>{show.name}</h2>
+        <p>{show.summary}</p>
+      </article>
+    </div>
+  );
 };
 
 export default ShowsItemDetails;
