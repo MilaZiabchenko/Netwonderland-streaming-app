@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useDebugValue } from 'react';
 
 const useFetch = url => {
   const [items, setItems] = useState([]);
@@ -37,6 +37,8 @@ const useFetch = url => {
 
     return () => abortControl.abort();
   }, [url, error]);
+
+  useDebugValue(items, isLoading, error);
 
   return { items, isLoading, error };
 };
