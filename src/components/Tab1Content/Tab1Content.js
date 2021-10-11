@@ -1,8 +1,9 @@
-import Beth_1 from '../images/beth_1.jpg';
-import Beth_2 from '../images/beth_2.jpg';
-import Beth_3 from '../images/beth_3.jpg';
-import Beth_4 from '../images/beth_4.jpg';
-import Tab1ContentItem from './Tab1ContentItem';
+import Beth_1 from '../../images/beth_1.jpg';
+import Beth_2 from '../../images/beth_2.jpg';
+import Beth_3 from '../../images/beth_3.jpg';
+import Beth_4 from '../../images/beth_4.jpg';
+import Tab1ContentItem from '../Tab1ContentItem';
+import './style.css';
 
 const Tab1Content = ({ className }) => {
 	const highlightedText = (

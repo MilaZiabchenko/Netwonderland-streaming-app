@@ -1,4 +1,6 @@
-import cancel_image from '../images/cancel_image.jpg';
+import cancel_image from '../../images/cancel_image.jpg';
+import './style.css';
+
 
 const Tab2Content = ({ className }) => {
 	return (

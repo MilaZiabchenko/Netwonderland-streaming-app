@@ -1,3 +1,5 @@
+import './style.css';
+
 const Tab1ContentItem = ({ source, title, text }) => {
 	return (
 		<div>
