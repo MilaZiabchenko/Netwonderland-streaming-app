@@ -1,0 +1,10 @@
+.card-details h2 {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 18px;
+}
+
+.card-details p {
+  margin: 20px 0;
+  line-height: 1.75;
+}

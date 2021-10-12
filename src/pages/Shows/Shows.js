@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import useFetch from '../hooks/useFetch';
-import useDebouncedValue from '../hooks/useDebouncedValue';
-import Header from '../components/Header';
-import ShowsGrid from '../components/ShowsGrid';
+import useFetch from '../../hooks/useFetch';
+import useDebouncedValue from '../../hooks/useDebouncedValue';
+import Header from '../../components/Header';
+import ShowsGrid from '../../components/ShowsGrid';
+import './style.css';
 
 const Shows = () => {
   const {
