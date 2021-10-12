@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import './style.css';
 
 const Login = () => {
-
   return (
     <>
       <header className="showcase-top">
@@ -22,7 +22,7 @@ const Login = () => {
                 className="form-control"
                 placeholder="Email"
                 autoComplete="off"
-                value=''
+                value=""
                 readOnly
                 required
               />
@@ -31,7 +31,7 @@ const Login = () => {
                 className="form-control"
                 placeholder="Password"
                 autoComplete="off"
-                value=''
+                value=""
                 readOnly
                 required
               />
