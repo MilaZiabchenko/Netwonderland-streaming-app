@@ -1,6 +1,6 @@
-import {useState, useEffect, useDebugValue} from 'react';
+import { useState, useEffect, useDebugValue } from 'react';
 
-const useDebouncedValue = (value, timeout) => {
+const useDebounce = (value, timeout) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
@@ -10,8 +10,8 @@ const useDebouncedValue = (value, timeout) => {
   }, [value, timeout]);
 
   useDebugValue(debouncedValue);
-  
-  return debouncedValue;
-}
 
-export default useDebouncedValue;
+  return debouncedValue;
+};
+
+export default useDebounce;

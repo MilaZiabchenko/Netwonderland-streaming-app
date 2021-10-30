@@ -1,5 +1,5 @@
 import Header from '../../components/Header';
-import './style.css';
+import './Favorites.css';
 
 const Favorites = () => {
   return (

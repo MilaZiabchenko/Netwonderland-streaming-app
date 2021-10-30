@@ -11,7 +11,7 @@ const useFetch = url => {
 
     const fetchItems = async () => {
       try {
-        const result = await axios(url, {
+        const result = await axios.get(url, {
           signal: abortControl.signal
         });
 

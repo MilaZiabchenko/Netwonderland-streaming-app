@@ -1,5 +1,5 @@
 import { URL_LIST } from './constants';
-import './style.css';
+import './Footer.css';
 
 const Footer = () => {
   return (

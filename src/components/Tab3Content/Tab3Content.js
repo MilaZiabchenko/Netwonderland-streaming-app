@@ -1,4 +1,4 @@
-import './style.css';
+import './Tab3Content.css';
 
 const Tab3Content = ({ className }) => {
   return (

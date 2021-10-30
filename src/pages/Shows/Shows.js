@@ -1,26 +1,28 @@
 import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
-import useDebouncedValue from '../../hooks/useDebouncedValue';
+import useDebounce from '../../hooks/useDebounce';
 import Header from '../../components/Header';
 import ShowsGrid from '../../components/ShowsGrid';
-import './style.css';
+import './Shows.css';
 
 const Shows = () => {
   const {
     items: shows,
     isLoading,
-    error
+    error,
   } = useFetch('https://api.tvmaze.com/shows');
 
   const [inputText, setInputText] = useState('');
-  const debouncedText = useDebouncedValue(inputText, 300);
+  const debouncedText = useDebounce(inputText, 250);
 
-  const filteredShows = shows.filter(show =>
+  const debouncedFilteredShows = shows.filter(show =>
     show.name.toLowerCase().startsWith(debouncedText.toLowerCase())
   );
 
   const changeHandler = e => {
     setInputText(e.target.value);
+
+    return debouncedFilteredShows;
   };
 
   const clearInput = () => {
@@ -59,9 +61,12 @@ const Shows = () => {
           <span> {error} :( </span>{' '}
         </h3>
       ) : (
-        <ShowsGrid isLoading={isLoading} shows={filteredShows} />
+        <ShowsGrid
+          isLoading={isLoading}
+          shows={debouncedFilteredShows ? debouncedFilteredShows : shows}
+        />
       )}
-      {filteredShows.length === 0 && inputText !== '' && (
+      {debouncedFilteredShows.length === 0 && inputText !== '' && (
         <h3 className="text-lg">
           {' '}
           <span>No matches :( </span>

@@ -1,7 +1,7 @@
 import spinner from '../../images/spinner.gif';
 import { Link } from 'react-router-dom';
 import ShowsGridItem from '../ShowsGridItem';
-import './style.css';
+import './ShowsGrid.css';
 
 const ShowsGrid = ({ shows, isLoading }) => {
   return isLoading ? (
@@ -9,11 +9,9 @@ const ShowsGrid = ({ shows, isLoading }) => {
   ) : (
     <section className="cards">
       {shows.map(show => (
-        <div key={show.id}>
-          <Link to={`/shows/${show.id}`}>
-            <ShowsGridItem show={show} />
-          </Link>
-        </div>
+        <Link to={`/shows/${show.id}`}>
+          <ShowsGridItem key={show.id} show={show} />
+        </Link>
       ))}
     </section>
   );

@@ -1,17 +1,19 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
-// import { useAuth } from '../contexts/AuthContext';
-import './style.css';
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
+import './SignUp.css';
 
 const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  // const { signup } = useAuth();
+  const { signup } = useAuth();
+  const history = useHistory();
 
   const handleSubmit = e => {
     e.preventDefault();
-    // signup(emailRef.current.value, passwordRef.current.value);
+    signup(emailRef.current.value, passwordRef.current.value);
+    history.push('/');
   };
 
   return (
@@ -35,28 +37,22 @@ const SignUp = () => {
             </h2>
             <form onSubmit={handleSubmit}>
               <input
-                id="email"
                 type="email"
                 ref={emailRef}
-                className="form-control"
                 placeholder="Email"
                 autoComplete="off"
                 required
               />
               <input
-                id="password"
                 type="password"
                 ref={passwordRef}
-                className="form-control"
                 placeholder="Password"
                 autoComplete="off"
                 required
               />
               <input
-                id="password-confirm"
                 type="password"
                 ref={passwordConfirmRef}
-                className="form-control"
                 placeholder="Password confirmation"
                 autoComplete="off"
                 required

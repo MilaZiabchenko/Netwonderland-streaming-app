@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 import useFetch from '../../hooks/useFetch';
-import './style.css';
+import './ShowsItemDetails.css';
 
 const ShowsItemDetails = () => {
   const { id } = useParams();

@@ -2,7 +2,7 @@ import Tab1Content from '../Tab1Content';
 import Tab2Content from '../Tab2Content';
 import Tab3Content from '../Tab3Content';
 import { useState } from 'react';
-import './style.css';
+import './Main.css';
 
 const FIRST_TAB = 1;
 const SECOND_TAB = 2;

@@ -103,7 +103,7 @@ img {
 .logo {
   font-family: 'Merienda', cursive;
   font-size: 2rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.125em;
   color: var(--primary-color);
   cursor: pointer;
 }
@@ -256,6 +256,9 @@ input {
 }
 
 @media (max-width: 980px) {
+  .showcase-top {
+    margin: 1rem auto;
+  }
   nav {
     margin: 1.5rem auto;
   }
