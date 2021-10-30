@@ -6,12 +6,12 @@ import Favorites from './pages/Favorites';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Footer from './components/Footer';
-import { AuthProvider } from './contexts/AuthContext';
+// import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <>
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <Router>
           <Switch>
             <Route exact path="/">
@@ -35,7 +35,7 @@ function App() {
           </Switch>
           <Footer />
         </Router>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </>
   );
 }
