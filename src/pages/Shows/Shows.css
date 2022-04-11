@@ -22,8 +22,8 @@ input[type='text'] {
 .searchIcon {
   display: grid;
   place-items: center;
-  height: 50px;
-  width: 50px;
+  height: 50.5px;
+  width: 50.5px;
   padding-right: 15px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

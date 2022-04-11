@@ -5,9 +5,9 @@ import './ShowsGrid.css';
 
 const ShowsGrid = ({ shows, isLoading }) => {
   return isLoading ? (
-    <img src={spinner} className="spinner" alt="" />
+    <img src={spinner} className='spinner' alt='' />
   ) : (
-    <section className="cards">
+    <section className='cards'>
       {shows.map(show => (
         <Link to={`/shows/${show.id}`}>
           <ShowsGridItem key={show.id} show={show} />

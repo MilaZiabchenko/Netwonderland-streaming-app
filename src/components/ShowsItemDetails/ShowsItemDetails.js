@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import './ShowsItemDetails.css';
 
@@ -6,13 +6,21 @@ const ShowsItemDetails = () => {
   const { id } = useParams();
   const { items: show } = useFetch('https://api.tvmaze.com/shows/' + id);
 
+  const showSummaryReplacer = show.summary
+    .replace('<p>', '')
+    .replace('</p>', '')
+    .replace('<b>', '')
+    .replace('</b>', '');
+
   return (
-    <div className="card-details">
-      <article>
-        <h2>{show.name}</h2>
-        <p>{show.summary}</p>
-      </article>
-    </div>
+    <article className='card-details'>
+      <h2>{show.name}</h2>
+      {/* <p>{show.summary}</p> */}
+      <p>{showSummaryReplacer}</p>
+      <div>
+        <img src={show.image.original} alt='' />
+      </div>
+    </article>
   );
 };
 

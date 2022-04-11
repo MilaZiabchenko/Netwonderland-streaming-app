@@ -7,12 +7,12 @@ const useFetch = url => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const abortControl = new AbortController();
+    const controller = new AbortController();
 
     const fetchItems = async () => {
       try {
         const result = await axios.get(url, {
-          signal: abortControl.signal
+          signal: controller.signal,
         });
 
         if (result.status !== 200) {
@@ -22,7 +22,6 @@ const useFetch = url => {
         setItems(result.data);
         setIsLoading(false);
         setError(null);
-
       } catch (error) {
         if (error.name === 'AbortError') {
           console.log('fetch aborted');
@@ -35,8 +34,8 @@ const useFetch = url => {
 
     fetchItems();
 
-    return () => abortControl.abort();
-  }, [url, error]);
+    return () => controller.abort();
+  }, [url]);
 
   useDebugValue(items, isLoading, error);
 
