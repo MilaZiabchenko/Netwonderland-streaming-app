@@ -4,12 +4,26 @@
 }
 
 .card-details h2 {
-  font-size: 24px;
+  font-size: 32px;
   color: var(--primary-color);
-  margin-bottom: 18px;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
-.card-details p {
+.details {
+  min-height: 350px;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.details p {
   margin: 2.5rem 0;
   line-height: 1.75;
+}
+
+.details i {
+  color: var(--primary-color);
+  margin-right: 2rem;
+  cursor: pointer;
 }

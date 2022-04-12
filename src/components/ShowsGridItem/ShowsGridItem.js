@@ -1,19 +1,6 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './ShowsGridItem.css';
 
 const ShowsGridItem = ({ show }) => {
-  const [heartIcon, setIcon] = useState('fas fa-heart fa-2x');
-  const navigate = useNavigate();
-
-  const handleLikes = () => {
-    setIcon('far fa-heart fa-2x');
-  };
-
-  const handleFavorites = () => {
-    navigate('/favorites');
-  };
-
   return (
     <div className='card'>
       <div className='card-inner'>
@@ -33,16 +20,10 @@ const ShowsGridItem = ({ show }) => {
               <strong>Premiered:</strong> {show.premiered}
             </li>
             <li>
+              <strong>Ended:</strong> {show.ended}
+            </li>
+            <li>
               <strong>Rating:</strong> {show.rating.average}
-            </li>
-            <li>
-              <i className={heartIcon} onClick={handleLikes}></i>
-              <i className='fas fa-share fa-2x btn-icon'></i>
-            </li>
-            <li>
-              <button className='btn btn-center' onClick={handleFavorites}>
-                Add to favorites
-              </button>
             </li>
           </ul>
         </div>

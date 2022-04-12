@@ -9,9 +9,9 @@
 
 .card h1 {
   font-size: 25px;
-  border-bottom: 1px var(--light-color) solid;
+  border-bottom: 1.5px var(--light-color) solid;
   padding-bottom: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 36px;
 }
 
 .card img {
@@ -40,13 +40,13 @@
 }
 
 .card-back {
+  padding: 20px;
   background-color: var(--primary-color);
   color: var(--light-color);
-  padding: 20px;
   transform: rotateY(180deg);
 }
 
 .card li {
   list-style: none;
-  padding-bottom: 12px;
+  padding-bottom: 18px;
 }
