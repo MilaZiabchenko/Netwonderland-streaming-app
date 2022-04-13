@@ -27,3 +27,8 @@
   margin-right: 2rem;
   cursor: pointer;
 }
+
+.details button {
+  margin: 3rem auto;
+  font-size: 1.25rem;
+}

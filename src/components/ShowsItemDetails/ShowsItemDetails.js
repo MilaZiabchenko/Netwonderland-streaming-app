@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import './ShowsItemDetails.css';
 
@@ -9,10 +8,13 @@ const ShowsItemDetails = () => {
   const { items: show } = useFetch('https://api.tvmaze.com/shows/' + id);
 
   const [heartIcon, setIcon] = useState('far fa-heart fa-2x');
+
   const navigate = useNavigate();
 
   const handleLikes = () => {
-    setIcon('fas fa-heart fa-2x');
+    heartIcon === 'far fa-heart fa-2x'
+      ? setIcon('fas fa-heart fa-2x')
+      : setIcon('far fa-heart fa-2x');
   };
 
   const handleFavorites = () => {
@@ -24,16 +26,15 @@ const ShowsItemDetails = () => {
   //   .replace('</p>', '')
   //   .replace('<b>', '')
   //   .replace('</b>', '');
-  // console.log(show);
 
-  // console.log(show)
+  // console.log(show);
 
   return (
     <article className='card-details'>
       <h2>{show.name}</h2>
       <div className='details'>
-        {/* <p>{showSummaryReplacer}</p> */}
         {/* <p>{show.summary}</p> */}
+        {/* <p>{showSummaryReplacer}</p> */}
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
           voluptate, labore reprehenderit eius suscipit voluptas. Aut nostrum
@@ -48,7 +49,7 @@ const ShowsItemDetails = () => {
 
         <i className={heartIcon} onClick={handleLikes}></i>
         <i className='fas fa-share fa-2x btn-icon'></i>
-        <button className='btn btn-center' onClick={handleFavorites}>
+        <button className='btn btn-lg btn-center' onClick={handleFavorites}>
           Add to favorites
         </button>
       </div>
