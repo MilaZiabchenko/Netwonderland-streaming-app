@@ -13,18 +13,24 @@ const ShowsGridItem = ({ show }) => {
             <li>
               <strong>Language:</strong> {show.language}
             </li>
-            <li>
-              <strong>Genres:</strong> {show.genres.map(genre => `${genre} `)}
-            </li>
+            {show.genres && (
+              <li>
+                <strong>Genres:</strong> {show.genres.map(genre => `${genre} `)}
+              </li>
+            )}
             <li>
               <strong>Premiered:</strong> {show.premiered}
             </li>
-            <li>
-              <strong>Ended:</strong> {show.ended}
-            </li>
-            <li>
-              <strong>Rating:</strong> {show.rating.average}
-            </li>
+            {show.ended && (
+              <li>
+                <strong>Ended:</strong> {show.ended}
+              </li>
+            )}
+            {show.rating.average && (
+              <li>
+                <strong>Rating:</strong> {show.rating.average}
+              </li>
+            )}
           </ul>
         </div>
       </div>
