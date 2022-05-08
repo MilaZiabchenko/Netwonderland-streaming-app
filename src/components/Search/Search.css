@@ -3,7 +3,7 @@
   margin-bottom: 3rem;
 }
 
-.searchInputs {
+.search-inputs {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ input[type='text'] {
   width: 50%;
 }
 
-.searchIcon {
+.search-icon {
   display: grid;
   place-items: center;
   height: 50.5px;

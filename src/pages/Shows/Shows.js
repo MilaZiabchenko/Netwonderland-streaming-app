@@ -20,10 +20,8 @@ const Shows = () => {
     show.name.toLowerCase().startsWith(debouncedText.toLowerCase())
   );
 
-  const changeHandler = e => {
+  const handleChange = e => {
     setInputText(e.target.value);
-
-    return debouncedFilteredShows;
   };
 
   const clearInput = () => {
@@ -37,7 +35,7 @@ const Shows = () => {
         <h2 className='text-lg'>Shows</h2>
         <Search
           inputText={inputText}
-          changeHandler={changeHandler}
+          handleChange={handleChange}
           clearInput={clearInput}
         />
         {error ? (

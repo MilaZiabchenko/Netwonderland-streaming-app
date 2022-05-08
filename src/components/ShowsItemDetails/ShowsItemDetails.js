@@ -21,32 +21,22 @@ const ShowsItemDetails = () => {
     navigate('/favorites');
   };
 
-  // const showSummaryReplacer = show.summary
-  //   .replace('<p>', '')
-  //   .replace('</p>', '')
-  //   .replace('<b>', '')
-  //   .replace('</b>', '');
-
-  // console.log(show);
-
   return (
-    <article className='card-details'>
+    <article className='show-details'>
       <h2>{show.name}</h2>
-      <div className='details'>
-        {/* <p>{show.summary}</p> */}
-        {/* <p>{showSummaryReplacer}</p> */}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          voluptate, labore reprehenderit eius suscipit voluptas. Aut nostrum
-          sint, maiores alias facilis odio magnam, maxime, neque hic a
-          voluptates? Vel, dolorem!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-          praesentium quis nobis distinctio quas expedita alias veniam sit,
-          optio facere!
-        </p>
-
+      <div className='card-details'>
+        {show.summary && (
+          <p>
+            {show.summary
+              .replace('<p>', '')
+              .replace('</p>', '')
+              .replace('<br />', '')
+              .replace('<b>', '')
+              .replace('</b>', '')
+              .replace('<i>', '')
+              .replace('</i>', '')}
+          </p>
+        )}
         <i className={heartIcon} onClick={handleLikes}></i>
         <i className='fas fa-share fa-2x btn-icon'></i>
         <button className='btn btn-lg btn-center' onClick={handleFavorites}>

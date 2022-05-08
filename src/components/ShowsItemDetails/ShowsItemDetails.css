@@ -1,34 +1,34 @@
-.card-details {
+.show-details {
   width: 50%;
   margin: 5rem auto;
 }
 
-.card-details h2 {
+.show-details h2 {
   font-size: 32px;
   color: var(--primary-color);
   margin-bottom: 3rem;
   text-align: center;
 }
 
-.details {
+.card-details {
   min-height: 350px;
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 10px;
 }
 
-.details p {
+.card-details p {
   margin: 2.5rem 0;
   line-height: 1.75;
 }
 
-.details i {
+.card-details i {
   color: var(--primary-color);
   margin-right: 2rem;
   cursor: pointer;
 }
 
-.details button {
+.card-details button {
   margin: 3rem auto;
   font-size: 1.25rem;
 }

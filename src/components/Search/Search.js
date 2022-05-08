@@ -1,18 +1,17 @@
 import './Search.css';
 
-const Search = ({ inputText, changeHandler, clearInput }) => {
+const Search = ({ inputText, handleChange, clearInput }) => {
   return (
     <section className='search'>
-      <div className='searchInputs'>
+      <div className='search-inputs'>
         <input
           type='text'
-          className='form-control'
-          placeholder='Search...'
           value={inputText}
-          onChange={changeHandler}
+          onChange={handleChange}
+          placeholder='Search...'
           autoFocus
         />
-        <div className='searchIcon'>
+        <div className='search-icon'>
           {inputText === '' ? (
             <i className='fas fa-search fa-2x'></i>
           ) : (
