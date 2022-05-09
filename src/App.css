@@ -41,17 +41,6 @@ body {
   color: var(--text-dark);
 }
 
-ul {
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: var(--light-color);
-}
-
 a {
   color: var(--text-dark);
   text-decoration: none;
@@ -62,8 +51,11 @@ a:hover {
   transition: all 100ms ease;
 }
 
-span {
-  color: var(--primary-color);
+h1,
+h2,
+h3,
+h4 {
+  color: var(--light-color);
 }
 
 p {
@@ -71,9 +63,18 @@ p {
   line-height: 1.35;
 }
 
+span {
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+}
+
 img {
   display: block;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -257,10 +258,12 @@ input {
   cursor: pointer;
 }
 
+/* Media queries */
 @media (max-width: 980px) {
   .showcase-top {
     margin: 1rem auto;
   }
+
   nav {
     margin: 1.5rem auto;
   }
