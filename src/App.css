@@ -77,17 +77,22 @@ img {
   object-fit: cover;
 }
 
+input {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 10.5px 15px;
+  border-radius: 5px;
+  border: 1px solid hsla(0, 0%, 100%, 0.88);
+  box-shadow: 0 5px 18px 0 hsla(0, 0%, 0%, 0.18);
+  font-size: 20px;
+}
+
 .container {
   width: 90%;
   margin: auto;
   overflow: hidden;
   padding: 0 1rem;
-}
-
-.modal {
-  position: relative;
-  width: 100%;
-  height: 100vh;
 }
 
 .showcase-top {
@@ -118,6 +123,35 @@ img {
   margin: 0 1.5em;
 }
 
+.spinner {
+  width: 200px;
+  margin: auto;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: -100px;
+  overflow: hidden;
+  background: url('images/glass_chess.jpg') no-repeat center center/cover;
+}
+
+.modal-content {
+  position: fixed;
+  z-index: 10;
+  max-width: 420px;
+  min-height: 420px;
+  height: fit-content;
+  inset: 0;
+  margin: auto;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 8px 0 hsla(0, 0%, 0%, 0.2),
+    0 7px 20px 0 hsla(0, 0%, 0%, 0.17);
+  background: hsla(0, 0%, 100%, 0.9);
+}
+
 .showcase::after,
 .modal::after {
   content: '';
@@ -141,43 +175,6 @@ img {
 .sign-in {
   height: 100px;
   margin-bottom: 3rem;
-}
-
-input {
-  display: block;
-  width: 100%;
-  margin: 1rem 0;
-  padding: 10.5px 15px;
-  border-radius: 5px;
-  border: 1px solid hsla(0, 0%, 100%, 0.88);
-  box-shadow: 0 5px 18px 0 hsla(0, 0%, 0%, 0.18);
-  font-size: 20px;
-}
-
-.spinner {
-  width: 200px;
-  margin: auto;
-}
-
-.modal {
-  top: -100px;
-  overflow: hidden;
-  background: url('images/glass_chess.jpg') no-repeat center center/cover;
-}
-
-.modal-content {
-  position: fixed;
-  z-index: 10;
-  max-width: 420px;
-  min-height: 420px;
-  height: fit-content;
-  inset: 0;
-  margin: auto;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 8px 0 hsla(0, 0%, 0%, 0.2),
-    0 7px 20px 0 hsla(0, 0%, 0%, 0.17);
-  background: hsla(0, 0%, 100%, 0.9);
 }
 
 /* Text Styles */
