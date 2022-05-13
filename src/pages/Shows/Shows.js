@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
+import useInput from '../../hooks/useInput';
 import useDebounce from '../../hooks/useDebounce';
 import Header from '../../components/Header';
 import Search from '../../components/Search';
@@ -13,20 +13,12 @@ const Shows = () => {
     error,
   } = useFetch('https://api.tvmaze.com/shows');
 
-  const [inputText, setInputText] = useState('');
+  const { value: inputText, handleChange, clearInput } = useInput('');
   const debouncedText = useDebounce(inputText, 250);
 
   const debouncedFilteredShows = shows.filter(show =>
     show.name.toLowerCase().startsWith(debouncedText.toLowerCase())
   );
-
-  const handleChange = e => {
-    setInputText(e.target.value);
-  };
-
-  const clearInput = () => {
-    setInputText('');
-  };
 
   return (
     <>

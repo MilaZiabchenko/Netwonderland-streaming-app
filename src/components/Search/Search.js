@@ -7,7 +7,7 @@ const Search = ({ inputText, handleChange, clearInput }) => {
         type='text'
         value={inputText}
         onChange={handleChange}
-        placeholder='Search...'
+        placeholder='Search for a show'
       />
       <div className='search-icon'>
         {inputText === '' ? (
