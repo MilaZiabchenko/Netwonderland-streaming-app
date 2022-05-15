@@ -19,9 +19,8 @@ const useFetch = url => {
           throw new Error('Cannot fetch data');
         }
 
-        setItems(result.data);
         setIsLoading(false);
-        setError(null);
+        setItems(result.data);
       } catch (error) {
         if (error.name === 'AbortError') {
           console.log('fetch aborted');

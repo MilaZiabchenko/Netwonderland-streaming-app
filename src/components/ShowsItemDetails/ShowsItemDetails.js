@@ -26,16 +26,7 @@ const ShowsItemDetails = () => {
       <h2>{show.name}</h2>
       <div className='card-details'>
         {show.summary && (
-          <p>
-            {show.summary
-              .replace('<p>', '')
-              .replace('</p>', '')
-              .replace('<br />', '')
-              .replace('<b>', '')
-              .replace('</b>', '')
-              .replace('<i>', '')
-              .replace('</i>', '')}
-          </p>
+          <p>{show.summary.replace(/<\/?[\w\s]*>|<.+[\W]>/g, '')}</p>
         )}
         <i className={heartIcon} onClick={handleLikes}></i>
         <i className='fas fa-share fa-2x btn-icon'></i>
