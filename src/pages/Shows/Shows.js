@@ -1,4 +1,4 @@
-import useFetch from '../../hooks/useFetch';
+import useAxios from '../../hooks/useAxios';
 import useInput from '../../hooks/useInput';
 import useDebounce from '../../hooks/useDebounce';
 import Header from '../../components/Header';
@@ -8,10 +8,10 @@ import Footer from '../../components/Footer';
 
 const Shows = () => {
   const {
-    items: shows,
     isLoading,
+    data: shows,
     error,
-  } = useFetch('https://api.tvmaze.com/shows');
+  } = useAxios('https://api.tvmaze.com/shows');
 
   const { value: inputText, handleChange, clearInput } = useInput('');
   const debouncedText = useDebounce(inputText, 250);
@@ -33,7 +33,7 @@ const Shows = () => {
         {error ? (
           <h3 className='text-lg'>
             {' '}
-            <span> {error} :( </span>{' '}
+            <span>{error} :( </span>{' '}
           </h3>
         ) : (
           <ShowsGrid

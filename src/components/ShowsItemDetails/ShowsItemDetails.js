@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import useAxios from '../../hooks/useAxios';
 import './ShowsItemDetails.css';
 
 const ShowsItemDetails = () => {
   const { id } = useParams();
-  const { items: show } = useFetch('https://api.tvmaze.com/shows/' + id);
+  const { data: show } = useAxios('https://api.tvmaze.com/shows/' + id);
 
   const [heartIcon, setIcon] = useState('far fa-heart fa-2x');
 
