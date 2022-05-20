@@ -21,13 +21,13 @@ const useAxios = url => {
       case 'success':
         return {
           ...initialState,
-          data: action.data,
+          data: action.payload,
         };
 
       case 'fail':
         return {
           ...initialState,
-          error: action.error,
+          error: action.payload,
         };
 
       default:
@@ -50,7 +50,7 @@ const useAxios = url => {
 
         dispatch({
           type: 'success',
-          data: result.data,
+          payload: result.data,
         });
       } else {
         try {
@@ -60,10 +60,10 @@ const useAxios = url => {
 
           dispatch({
             type: 'success',
-            data: result.data,
+            payload: result.data,
           });
         } catch (error) {
-          dispatch({ type: 'fail', error: error.message });
+          dispatch({ type: 'fail', payload: error.message });
         }
       }
     };

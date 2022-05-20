@@ -51,4 +51,5 @@
 .card-back li {
   list-style: none;
   padding-bottom: 18px;
+  line-height: 1.5rem;
 }

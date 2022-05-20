@@ -15,7 +15,7 @@ const ShowsGridItem = ({ show }) => {
             </li>
             {show.genres && (
               <li>
-                <strong>Genres:</strong> {show.genres.map(genre => `${genre} `)}
+                <strong>Genres:</strong> {show.genres.join(', ')}
               </li>
             )}
             <li>

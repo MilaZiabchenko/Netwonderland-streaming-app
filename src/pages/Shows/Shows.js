@@ -25,21 +25,23 @@ const Shows = () => {
       <Header />
       <main>
         <h2 className='text-lg'>Shows</h2>
-        <Search
-          inputText={inputText}
-          handleChange={handleChange}
-          clearInput={clearInput}
-        />
         {error ? (
           <h3 className='text-lg'>
             {' '}
             <span>{error} :( </span>{' '}
           </h3>
         ) : (
-          <ShowsGrid
-            isLoading={isLoading}
-            shows={debouncedFilteredShows ? debouncedFilteredShows : shows}
-          />
+          <>
+            <Search
+              inputText={inputText}
+              handleChange={handleChange}
+              clearInput={clearInput}
+            />
+            <ShowsGrid
+              isLoading={isLoading}
+              shows={debouncedFilteredShows ? debouncedFilteredShows : shows}
+            />
+          </>
         )}
         {debouncedFilteredShows.length === 0 && inputText !== '' && (
           <h3 className='text-lg'>

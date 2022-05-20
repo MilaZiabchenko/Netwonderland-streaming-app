@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase';
 
-const AuthContext = React.createContext();
-
+const AuthContext = createContext();
 const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
