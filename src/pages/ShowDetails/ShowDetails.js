@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
-import './ShowsItemDetails.css';
+import './ShowDetails.css';
 
 const ShowsItemDetails = () => {
-  const { id } = useParams();
-  const { data: show } = useAxios('https://api.tvmaze.com/shows/' + id);
+  const { showId } = useParams();
+  const { data: show } = useAxios(`https://api.tvmaze.com/shows/${showId}`);
 
   const [heartIcon, setIcon] = useState('far fa-heart fa-2x');
 
